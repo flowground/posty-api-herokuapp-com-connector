@@ -1,0 +1,482 @@
+{
+    "title": "posty_API",
+    "description": "The posty_API is the core element of the posty softwarestack. It is developed to administrate a mailserver based on Postfix and Dovecot. It offers an easy REST interface which can be used in own applications or with the posty client applications, posty_CLI and posty_webUI.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/posty-api.herokuapp.com/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://posty-api.herokuapp.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "GET_api__version_domains___format_": {
+            "main": "./lib/actions/GET_api__version_domains___format_.js",
+            "title": "Returns all available domains",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_domains___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_api__version_domains___format_": {
+            "main": "./lib/actions/POST_api__version_domains___format_.js",
+            "title": "Create new domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_api__version_domains___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_api__version_domains__domain_name___format_": {
+            "main": "./lib/actions/DELETE_api__version_domains__domain_name___format_.js",
+            "title": "Delete the specified domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_api__version_domains__domain_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_domains__domain_name___format_": {
+            "main": "./lib/actions/GET_api__version_domains__domain_name___format_.js",
+            "title": "Returns the information to the specified domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_domains__domain_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_api__version_domains__domain_name___format_": {
+            "main": "./lib/actions/PUT_api__version_domains__domain_name___format_.js",
+            "title": "Update the specified domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_api__version_domains__domain_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_domains__domain_name_aliases___format_": {
+            "main": "./lib/actions/GET_api__version_domains__domain_name_aliases___format_.js",
+            "title": "Returns all aliases for the specified domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_domains__domain_name_aliases___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_api__version_domains__domain_name_aliases___format_": {
+            "main": "./lib/actions/POST_api__version_domains__domain_name_aliases___format_.js",
+            "title": "Create new domain alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_api__version_domains__domain_name_aliases___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_api__version_domains__domain_name_aliases__alias_name___format_": {
+            "main": "./lib/actions/DELETE_api__version_domains__domain_name_aliases__alias_name___format_.js",
+            "title": "Delete the specified domain alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_api__version_domains__domain_name_aliases__alias_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_domains__domain_name_aliases__alias_name___format_": {
+            "main": "./lib/actions/GET_api__version_domains__domain_name_aliases__alias_name___format_.js",
+            "title": "Returns the information to the specified domain alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_domains__domain_name_aliases__alias_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_api__version_domains__domain_name_aliases__alias_name___format_": {
+            "main": "./lib/actions/PUT_api__version_domains__domain_name_aliases__alias_name___format_.js",
+            "title": "Update the specified domain alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_api__version_domains__domain_name_aliases__alias_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_domains__domain_name_users___format_": {
+            "main": "./lib/actions/GET_api__version_domains__domain_name_users___format_.js",
+            "title": "Returns all users for the specified domain",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_domains__domain_name_users___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_api__version_domains__domain_name_users___format_": {
+            "main": "./lib/actions/POST_api__version_domains__domain_name_users___format_.js",
+            "title": "Create new user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_api__version_domains__domain_name_users___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_api__version_domains__domain_name_users__user_name___format_": {
+            "main": "./lib/actions/DELETE_api__version_domains__domain_name_users__user_name___format_.js",
+            "title": "Delete the specified user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_api__version_domains__domain_name_users__user_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_domains__domain_name_users__user_name___format_": {
+            "main": "./lib/actions/GET_api__version_domains__domain_name_users__user_name___format_.js",
+            "title": "Returns the information to the specified user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_domains__domain_name_users__user_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_api__version_domains__domain_name_users__user_name___format_": {
+            "main": "./lib/actions/PUT_api__version_domains__domain_name_users__user_name___format_.js",
+            "title": "Update the specified user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_api__version_domains__domain_name_users__user_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_domains__domain_name_users__user_name_aliases___format_": {
+            "main": "./lib/actions/GET_api__version_domains__domain_name_users__user_name_aliases___format_.js",
+            "title": "Returns all aliases for the specified user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_domains__domain_name_users__user_name_aliases___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_api__version_domains__domain_name_users__user_name_aliases___format_": {
+            "main": "./lib/actions/POST_api__version_domains__domain_name_users__user_name_aliases___format_.js",
+            "title": "Create new user alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_api__version_domains__domain_name_users__user_name_aliases___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_": {
+            "main": "./lib/actions/DELETE_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_.js",
+            "title": "Delete the specified user alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_": {
+            "main": "./lib/actions/GET_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_.js",
+            "title": "Returns the information to the specified user alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_": {
+            "main": "./lib/actions/PUT_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_.js",
+            "title": "Update the specified user alias",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_api__version_domains__domain_name_users__user_name_aliases__alias_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_summary___format_": {
+            "main": "./lib/actions/GET_api__version_summary___format_.js",
+            "title": "Returns a summary of all Resources",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_summary___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api_v1_swagger_doc___format_": {
+            "main": "./lib/actions/GET_api_v1_swagger_doc___format_.js",
+            "title": "Swagger compatible API description",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api_v1_swagger_doc___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api_v1_swagger_doc__name___format_": {
+            "main": "./lib/actions/GET_api_v1_swagger_doc__name___format_.js",
+            "title": "Swagger compatible API description for specific API",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api_v1_swagger_doc__name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_transports___format_": {
+            "main": "./lib/actions/GET_api__version_transports___format_.js",
+            "title": "Returns all available transports",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_transports___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "POST_api__version_transports___format_": {
+            "main": "./lib/actions/POST_api__version_transports___format_.js",
+            "title": "Create new transport",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/POST_api__version_transports___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DELETE_api__version_transports__transport_name___format_": {
+            "main": "./lib/actions/DELETE_api__version_transports__transport_name___format_.js",
+            "title": "Delete the specified transport",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DELETE_api__version_transports__transport_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GET_api__version_transports__transport_name___format_": {
+            "main": "./lib/actions/GET_api__version_transports__transport_name___format_.js",
+            "title": "Returns the information to the specified transport",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GET_api__version_transports__transport_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PUT_api__version_transports__transport_name___format_": {
+            "main": "./lib/actions/PUT_api__version_transports__transport_name___format_.js",
+            "title": "Update the specified transport",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PUT_api__version_transports__transport_name___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
